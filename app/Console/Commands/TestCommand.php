@@ -30,7 +30,7 @@ class TestCommand extends Command
     public function handle()
     {
 
-        Excel::import(new ProjectImport(), 'files/import.xlsx', 'public');
+        Excel::import(new ProjectImport(), 'files/projects2.xlsx', 'public');
 
         return Command::SUCCESS;
     }
