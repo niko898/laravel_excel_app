@@ -8,17 +8,17 @@
                         @click.prevent="selectExcel"
                         href="#"
                         class="block rounded-full bg-green-600 w-32 text-center text-white p-2">Excel</a>
-                </form>
-                <div v-if="file" class="ml-3">
-                    <a
-                        @click.prevent="importExcel"
-                        href="#"
-                        class="block rounded-full bg-sky-600 w-32 text-center text-white p-2">Import</a>
-                </div>
+            </form>
+            <div v-if="file" class="ml-3">
+                <a
+                    @click.prevent="importExcel"
+                    href="#"
+                    class="block rounded-full bg-sky-600 w-32 text-center text-white p-2">Import</a>
             </div>
-
         </div>
-    </template>
+
+    </div>
+</template>
 
 <script>
 import MainLayout from "@/Layouts/MainLayout.vue";

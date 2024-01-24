@@ -11,15 +11,13 @@ class File extends Model
     protected $guarded = false;
     protected $table = 'files';
 
-    public static function putAndCreate($dataFile): string
+    public static function putAndCreate($dataFile)
     {
-        $file = Storage::disk('public')->put('files/', $dataFile);
-        File::create([
-            'path' => $file,
+        $path = Storage::disk('public')->put('files/', $dataFile);
+        return File::create([
+            'path' => $path,
             'mime_type' => $dataFile->getClientOriginalExtension(),
             'title' => $dataFile->getClientOriginalName()
         ]);
-
-        return $file;
     }
 }
