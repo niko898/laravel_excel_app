@@ -29,7 +29,8 @@ class ProjectController extends Controller
         $file = File::putAndCreate($data['file']);
         $task = Task::create([
             'file_id' => $file->id,
-            'user_id' => auth()->id()
+            'user_id' => auth()->id(),
+            'type' => $data['type'],
         ]);
 
         ImportProjectExcelFileJob::dispatchNow($file->path, $task);
